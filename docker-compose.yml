@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: medbus-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Atharv@04
+      MYSQL_DATABASE: medbus
+    ports:
+      - "3307:3306"
+
+  medbus-app:
+    build: .
+    container_name: medbus-app
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/medbus
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
