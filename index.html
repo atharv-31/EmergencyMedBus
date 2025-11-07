@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emergency MedBus</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergency MedBus System</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>🚑 Emergency MedBus System</h1>
-<img class="img" src="Logo.png" alt="Italian Trulli" style="width: 128px; height: 128px;">
-  <!-- Form to submit request -->
+  <img class="img" src="Logo.png" alt="MedBus Logo" width="128" height="128" />
+
+  <!-- Form Section -->
   <div class="form-container">
     <h2>Raise Emergency Request</h2>
     <form id="requestForm">
-      <label>Name:</label>
-      <input type="text" id="name" required><br>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter full name" required>
 
-      <label>Age:</label>
-      <input type="number" id="age" required><br>
+      <label for="age">Age:</label>
+      <input type="number" id="age" placeholder="Enter age" required>
 
-      <label>Location:</label>
-      <input type="text" id="location" required><br>
+      <label for="location">Location:</label>
+      <input type="text" id="location" placeholder="Enter your current location" required>
 
-      <label>Contact:</label>
-      <input type="text" id="contact" required><br>
+      <label for="contact">Contact:</label>
+      <input type="text" id="contact" placeholder="Enter contact number" required>
 
-      <label>Emergency Type:</label>
-      <input type="text" id="emergency" required><br>
+      <label for="emergency">Emergency Type:</label>
+      <input type="text" id="emergency" placeholder="Type of emergency (e.g., accident, heart attack)" required>
 
-      <button type="submit">Submit</button>
+      <button type="submit">Submit Request</button>
     </form>
   </div>
 
-  <!-- Section to view all requests -->
+  <!-- Request Section -->
   <div id="requests">
-    <h2>All Requests</h2>
+    <h2>All Emergency Requests</h2>
     <button onclick="fetchRequests()">View Requests</button>
-    <table id="requestTable" border="1"  style="margin-top:10px;" >
+
+    <table id="requestTable">
       <thead>
         <tr>
           <th>Request ID</th>
@@ -48,8 +50,7 @@
           <th>Status</th>
         </tr>
       </thead>
-      <tbody>
-      </tbody>
+      <tbody></tbody>
     </table>
   </div>
 
